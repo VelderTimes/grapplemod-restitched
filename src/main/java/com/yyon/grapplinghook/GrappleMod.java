@@ -53,14 +53,14 @@ public class GrappleMod implements ModInitializer {
             return InteractionResult.SUCCESS;
         });
 
-        GrappleModCustomizationProperties.registerAll();
-        GrappleModCustomizationCategories.registerAll();
-
         GrappleModBlocks.registerAllBlocks();
         GrappleModItems.registerAllItems();  // Items must always be registered after blocks.
         GrappleModEntities.registerAllEntities();
         GrappleModEnchantments.registerAllEnchantments();
         GrappleModBlockEntities.registerAllBlockEntities();
+
+        GrappleModCustomizationProperties.registerAll();
+        GrappleModCustomizationCategories.registerAll(); // Categories must always go after items + properties.
 
         NetworkManager.registerPacketListeners();
     }
