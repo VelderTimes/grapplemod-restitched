@@ -20,4 +20,10 @@ public interface CustomTooltipHandler {
     }
 
     Component getTooltip();
+
+    void setTooltipOverride(Component tooltipText);
+
+    default void resetTooltipOverride() {
+        this.setTooltipOverride(null);
+    }
 }
