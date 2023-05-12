@@ -1,6 +1,6 @@
 package com.yyon.grapplinghook;
 
-import com.yyon.grapplinghook.config.GrappleModConfig;
+import com.yyon.grapplinghook.config.GrappleModLegacyConfig;
 import com.yyon.grapplinghook.network.NetworkManager;
 import com.yyon.grapplinghook.content.registry.*;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -42,7 +42,7 @@ public class GrappleMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ConfigHolder<?> cfg = AutoConfig.register(GrappleModConfig.class, GsonConfigSerializer::new);
+        ConfigHolder<?> cfg = AutoConfig.register(GrappleModLegacyConfig.class, GsonConfigSerializer::new);
         cfg.registerSaveListener((holder, config) -> {
             GrappleModItems.invalidateCreativeTabCache();
             return InteractionResult.SUCCESS;
